@@ -2,59 +2,53 @@
 
 .hero{
     width: 100%;
-    height: 100vh;
-    background-color: #111;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-/* HERO */
-
-.hero{
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
+    margin-top: 0px;
+    background-color: #0b0b0b;
 }
 
-/* SLIDES */
+/* CONTAINER HERO */
 
 .slides{
+    position: relative;
+
     width: 100%;
-    height: 100%;
+    height: 580px;
+
+    overflow: hidden;
 }
 
 .slide{
     position: absolute;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1.2s ease;
 }
 
 .slide.active{
     opacity: 1;
+    z-index: 2;
 }
 
-/* IMAGENS */
+/* IMAGEM */
 
 .slide img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    animation: zoom 8s linear infinite;
+    transform: scale(1);
+    animation: heroZoom 12s ease forwards;
 }
 
-/* EFEITO ZOOM */
+/* ZOOM SUAVE */
 
-@keyframes zoom{
+@keyframes heroZoom{
 
-    0%{
+    from{
         transform: scale(1);
     }
 
-    100%{
-        transform: scale(1.08);
+    to{
+        transform: scale(1.05);
     }
 
 }
@@ -63,11 +57,16 @@
 
 .overlay{
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.65);
+    inset: 0;
+
+    background:
+    linear-gradient(
+        to right,
+        rgba(0,0,0,0.88) 15%,
+        rgba(0,0,0,0.60) 45%,
+        rgba(0,0,0,0.45) 100%
+    );
+
     z-index: 1;
 }
 
@@ -75,74 +74,153 @@
 
 .slide-content{
     position: absolute;
+
     top: 50%;
     left: 8%;
+
     transform: translateY(-50%);
-    z-index: 2;
-    max-width: 700px;
+
+    z-index: 3;
+
+    width: 100%;
+    max-width: 520px;
+
+    animation: contentFade 1s ease;
+}
+
+/* ANIMAÇÃO TEXTO */
+
+@keyframes contentFade{
+
+    from{
+        opacity: 0;
+        transform: translateY(-50%) translateX(-30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+    }
+
+}
+
+/* SUBTÍTULO */
+
+.slide-content span{
+    display: inline-block;
+
+    color: #FFC107;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
+
+    text-transform: uppercase;
 }
 
 /* TÍTULO */
 
 .slide-content h1{
-    font-size: 4rem;
+    font-size: 3.4rem;
     font-weight: 700;
+
     line-height: 1.1;
-    margin-bottom: 20px;
+
+    margin-bottom: 22px;
+
+    color: white;
 }
 
 /* TEXTO */
 
 .slide-content p{
-    font-size: 1.2rem;
-    color: #ddd;
+    font-size: 1.05rem;
+
+    color: rgba(255,255,255,0.80);
+
+    line-height: 1.8;
+
     margin-bottom: 35px;
-    max-width: 600px;
+
+    max-width: 560px;
 }
 
 /* BOTÃO */
 
 .hero-btn{
-    display: inline-block;
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 32px;
+
+    border-radius: 50px;
+
     background-color: #FFC107;
+
     color: black;
-    padding: 15px 35px;
-    border-radius: 40px;
+
     text-decoration: none;
+
     font-weight: 600;
+
     transition: 0.3s;
 }
 
 .hero-btn:hover{
-    transform: scale(1.05);
-    background-color: #ffcd38;
+    transform: translateY(-3px);
+
+    background-color: #ffd54a;
+
+    box-shadow: 0 10px 25px rgba(255,193,7,0.25);
 }
 
-/* BOTÕES */
+/* SETAS */
 
 .prev,
 .next{
     position: absolute;
+
     top: 50%;
+
     transform: translateY(-50%);
-    z-index: 5;
-    background: rgba(255,255,255,0.1);
+
+    width: 52px;
+    height: 52px;
+
     border: none;
-    color: white;
-    width: 55px;
-    height: 55px;
+
     border-radius: 50%;
+
+    background: rgba(255,255,255,0.10);
+
+    backdrop-filter: blur(6px);
+
+    color: white;
+
+    font-size: 1.2rem;
+
     cursor: pointer;
-    font-size: 1.5rem;
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     transition: 0.3s;
 }
 
 .prev{
-    left: 30px;
+    left: 25px;
 }
 
 .next{
-    right: 30px;
+    right: 25px;
 }
 
 .prev:hover,
@@ -155,20 +233,28 @@
 
 .indicators{
     position: absolute;
-    bottom: 40px;
+
+    bottom: 25px;
     left: 50%;
+
     transform: translateX(-50%);
+
     display: flex;
-    gap: 12px;
-    z-index: 5;
+    gap: 10px;
+
+    z-index: 20;
 }
 
 .indicator{
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: rgba(255,255,255,0.5);
+    width: 32px;
+    height: 4px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.35);
+
     cursor: pointer;
+
     transition: 0.3s;
 }
 
@@ -176,69 +262,110 @@
     background-color: #FFC107;
 }
 
-/* RESPONSIVIDADE */
+/* RESPONSIVO */
 
 @media(max-width: 992px){
 
     .slide-content h1{
-        font-size: 3rem;
-    }
-
-    .slide-content p{
-        font-size: 1rem;
+        font-size: 2.8rem;
     }
 
 }
 
 @media(max-width: 768px){
 
-    .slide-content{
-        left: 5%;
-        right: 5%;
-        max-width: 100%;
+    /* HERO */
+
+    .slides{
+        height: 480px;
     }
+
+    /* OVERLAY */
+
+    .overlay{
+        background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,0.82),
+            rgba(0,0,0,0.55)
+        );
+    }
+
+    /* IMAGEM */
+
+    .slide img{
+        object-position: center;
+    }
+
+    /* CONTEÚDO */
+
+    .slide-content{
+        left: 6%;
+        right: 6%;
+        max-width: 320px;
+    }
+
+    /* TÍTULO */
 
     .slide-content h1{
-        font-size: 2.3rem;
+        font-size: 2rem;
+        line-height: 1.15;
+        margin-bottom: 16px;
     }
+
+    /* TEXTO */
 
     .slide-content p{
-        font-size: 0.95rem;
-        margin-bottom: 25px;
+        font-size: 0.92rem;
+        line-height: 1.6;
+        margin-bottom: 22px;
     }
 
+    /* BOTÃO */
+
     .hero-btn{
-        padding: 14px 28px;
-        font-size: 0.95rem;
+        width: auto;
+
+        padding: 12px 22px;
+
+        font-size: 0.9rem;
     }
+
+    /* SETAS */
+
+    /* SETAS MOBILE */
 
     .prev,
     .next{
-        width: 45px;
-        height: 45px;
-        font-size: 1.2rem;
-    }
+      width: 35px;
+      height: 35px;
+      font-size: 1rem;
+}
 
 }
 
 @media(max-width: 480px){
 
+    .slides{
+        height: 430px;
+    }
+
+    .slide-content{
+        max-width: 280px;
+    }
+
     .slide-content h1{
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
 
     .slide-content p{
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        margin-bottom: 18px;
     }
 
     .hero-btn{
-        width: 100%;
-        text-align: center;
-    }
-
-    .prev,
-    .next{
-        display: none;
+        padding: 11px 18px;
+        font-size: 0.85rem;
     }
 
 }
