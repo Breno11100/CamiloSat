@@ -19,15 +19,16 @@ window.addEventListener("scroll", () => {
 /* MENU MOBILE */
 
 const menuToggle = document.querySelector(".menu-toggle");
-
 const navbar = document.querySelector(".navbar");
 
-const headerBtn = document.querySelector(".header-btn");
+/* VERIFICA SE EXISTE */
 
-menuToggle.addEventListener("click", () => {
+if(menuToggle && navbar){
 
-    navbar.classList.toggle("active");
+    menuToggle.addEventListener("click", () => {
 
-    headerBtn.classList.toggle("active");
+        navbar.classList.toggle("active");
 
-});
+    });
+
+}
