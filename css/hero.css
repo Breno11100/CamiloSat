@@ -1,0 +1,244 @@
+/* HERO */
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* HERO */
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* SLIDES */
+
+.slides{
+    width: 100%;
+    height: 100%;
+}
+
+.slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active{
+    opacity: 1;
+}
+
+/* IMAGENS */
+
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zoom 8s linear infinite;
+}
+
+/* EFEITO ZOOM */
+
+@keyframes zoom{
+
+    0%{
+        transform: scale(1);
+    }
+
+    100%{
+        transform: scale(1.08);
+    }
+
+}
+
+/* OVERLAY */
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    z-index: 1;
+}
+
+/* CONTEÚDO */
+
+.slide-content{
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    z-index: 2;
+    max-width: 700px;
+}
+
+/* TÍTULO */
+
+.slide-content h1{
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+/* TEXTO */
+
+.slide-content p{
+    font-size: 1.2rem;
+    color: #ddd;
+    margin-bottom: 35px;
+    max-width: 600px;
+}
+
+/* BOTÃO */
+
+.hero-btn{
+    display: inline-block;
+    background-color: #FFC107;
+    color: black;
+    padding: 15px 35px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.hero-btn:hover{
+    transform: scale(1.05);
+    background-color: #ffcd38;
+}
+
+/* BOTÕES */
+
+.prev,
+.next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.prev{
+    left: 30px;
+}
+
+.next{
+    right: 30px;
+}
+
+.prev:hover,
+.next:hover{
+    background-color: #FFC107;
+    color: black;
+}
+
+/* INDICADORES */
+
+.indicators{
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 5;
+}
+
+.indicator{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.indicator.active{
+    background-color: #FFC107;
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width: 992px){
+
+    .slide-content h1{
+        font-size: 3rem;
+    }
+
+    .slide-content p{
+        font-size: 1rem;
+    }
+
+}
+
+@media(max-width: 768px){
+
+    .slide-content{
+        left: 5%;
+        right: 5%;
+        max-width: 100%;
+    }
+
+    .slide-content h1{
+        font-size: 2.3rem;
+    }
+
+    .slide-content p{
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+
+    .hero-btn{
+        padding: 14px 28px;
+        font-size: 0.95rem;
+    }
+
+    .prev,
+    .next{
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+
+}
+
+@media(max-width: 480px){
+
+    .slide-content h1{
+        font-size: 1.8rem;
+    }
+
+    .slide-content p{
+        font-size: 0.9rem;
+    }
+
+    .hero-btn{
+        width: 100%;
+        text-align: center;
+    }
+
+    .prev,
+    .next{
+        display: none;
+    }
+
+}

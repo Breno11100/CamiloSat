@@ -8,7 +8,9 @@
     <link rel="icon" href="assets/img/faviconCamilosat.png" type="image/png">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
 
     <!-- Fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,14 +34,30 @@
       </div>
 
       <!-- MENU -->
-      <nav class="navbar">
+<nav class="navbar">
 
-          <a href="#">Início</a>
-          <a href="#">Serviços</a>
-          <a href="#">Sobre</a>
-          <a href="#">Contato</a>
+    <a href="#">Início</a>
+    <a href="#">Serviços</a>
+    <a href="#">Sobre</a>
+    <a href="#">Contato</a>
 
-      </nav>
+    <a href="#" class="mobile-btn">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+        Fale com a Central
+
+    </a>
+
+</nav>
+
+      <!-- MENU MOBILE -->
+
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
       <!-- BOTÃO -->
       <a href="#" class="header-btn">
@@ -48,10 +66,106 @@
 
     </header>
 
-    <!-- HERO / CARROSSEL -->
-    <section class="hero">
+<!-- HERO -->
+<section class="hero">
 
-    </section>
+    <!-- SLIDES -->
+    <div class="slides">
+
+        <!-- SLIDE 1 -->
+        <div class="slide active">
+
+            <img src="assets/img/empresa.jpg" alt="Empresa">
+
+            <div class="overlay"></div>
+
+            <div class="slide-content">
+
+                <h1>
+                    Tecnologia e segurança para seu veículo
+                </h1>
+
+                <p>
+                    Instalação profissional de rastreadores com suporte especializado.
+                </p>
+
+                <a href="#" class="hero-btn">
+                    Solicitar orçamento
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="slide">
+
+            <img src="assets/img/caminhoes.jpg" alt="Caminhões">
+
+            <div class="overlay"></div>
+
+            <div class="slide-content">
+
+                <h1>
+                    Estrutura especializada e atendimento rápido
+                </h1>
+
+                <p>
+                    Tecnologia moderna para garantir eficiência e segurança.
+                </p>
+
+                <a href="#" class="hero-btn">
+                    Conhecer serviços
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="slide">
+
+            <img src="assets/img/instalacao.jpg" alt="Instalação">
+
+            <div class="overlay"></div>
+
+            <div class="slide-content">
+
+                <h1>
+                    Instalação técnica com qualidade e precisão
+                </h1>
+
+                <p>
+                    Equipe capacitada e equipamentos atualizados.
+                </p>
+
+                <a href="#" class="hero-btn">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    Falar com a central
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- BOTÕES -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+
+    <!-- INDICADORES -->
+    <div class="indicators">
+
+        <span class="indicator active"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
+
+    </div>
+
+</section>
 
     <!-- SOBRE -->
     <section class="sobre">
@@ -78,7 +192,9 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/header.js"></script>
 
 </body>
 </html>
