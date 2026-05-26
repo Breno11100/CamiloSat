@@ -276,7 +276,17 @@
 
     /* HERO */
 
+    /* HERO FULL WIDTH MOBILE */
+
+    .hero{
+        width: 100%;
+        padding: 0;
+        margin-top: 90px;
+    }
+
     .slides{
+        width: 100%;
+        border-radius: 0;
         height: 480px;
     }
 
@@ -337,10 +347,12 @@
 
     .prev,
     .next{
-      width: 35px;
-      height: 35px;
-      font-size: 1rem;
-}
+        display: none;
+    }
+
+    .indicators{
+        bottom: 85px;
+    }
 
 }
 
