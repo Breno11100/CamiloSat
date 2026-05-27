@@ -1,0 +1,141 @@
+/* SERVIÇOS */
+
+.servicos{
+    width: 100%;
+    padding: 110px 8%;
+    background-color: #101010;
+}
+
+/* CONTAINER */
+
+.servicos-container{
+    width: 100%;
+}
+
+/* TÍTULO */
+
+.servicos-title{
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 70px auto;
+}
+
+.servicos-title span{
+    display: inline-block;
+    color: #FFC107;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.servicos-title h2{
+    color: white;
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+/* GRID */
+
+.servicos-cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+/* CARD */
+
+.servico-card{
+    background: #151515;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 24px;
+    padding: 40px 30px;
+    transition: 0.3s;
+}
+
+.servico-card:hover{
+    transform: translateY(-8px);
+    border-color: rgba(255,193,7,0.25);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.35);
+}
+
+/* ÍCONE */
+
+.servico-card i{
+    width: 65px;
+    height: 65px;
+    border-radius: 18px;
+    background: rgba(255,193,7,0.12);
+    color: #FFC107;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+}
+
+/* TÍTULO */
+
+.servico-card h3{
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* TEXTO */
+
+.servico-card p{
+    color: rgba(255,255,255,0.72);
+    line-height: 1.8;
+    font-size: 0.96rem;
+}
+
+/* RESPONSIVO */
+
+@media(max-width: 992px){
+
+    .servicos-title h2{
+        font-size: 2.5rem;
+    }
+
+    .servicos-cards{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+
+@media(max-width: 768px){
+
+    .servicos{
+        padding: 80px 6%;
+    }
+
+    .servicos-title{
+        margin-bottom: 50px;
+    }
+
+    .servicos-title h2{
+        font-size: 2rem;
+    }
+
+    .servicos-cards{
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media(max-width: 480px){
+
+    .servicos-title h2{
+        font-size: 1.7rem;
+    }
+
+    .servico-card{
+        padding: 32px 24px;
+    }
+
+    .servico-card p{
+        font-size: 0.9rem;
+    }
+
+}
